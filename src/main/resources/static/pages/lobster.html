@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="lib/jquery-1.11.0.js"></script>
+    <title>抽奖</title>
+    <style>
+        #success{
+            display: none;
+    </style>
+</head>
+
+<body>
+    <div>抽取龙虾！</div>
+    <div>金额: <span id="money"></span></div>
+    <label for="btn">消耗10金币</label>
+    <button id="btn" onclick="excu()">点击抽取</button>
+    <div id="success">
+        <p>恭喜你，抽中【龙年限定：李青】</p>
+        <img src="lib/龙虾.jpg" alt="">
+    </div>
+
+    <script>
+        init();
+        function init(){
+            // var id = Math.random() * 1000
+            var id = localStorage.getItem("userid");
+            $.ajax({
+                url: "/inituser",
+                data: {
+                    userid: id ? id : null
+                },
+                success: function(data){
+                    localStorage.setItem("userid", data.id);
+                    $("#money").text(data.money);
+                }
+            });
+            
+        }
+
+        function excu() {
+            var money = $("#money").text();
+            if(money<10){
+                alert("穷逼，滚");
+                return;
+            }
+            var n = Math.random() * 1000;
+            $("#money").text(money - 10);
+            var id = localStorage.getItem("userid");
+            $.ajax({
+                url: "/excu",
+                data: {
+                    userid: id
+                },
+                success: function(data){
+                }
+            });
+            if (n < 20) {
+                $("#success").show();
+            } else {
+                alert("很遗憾，你没有中奖");
+            }
+        }
+    </script>
+</body>
+
+</html>

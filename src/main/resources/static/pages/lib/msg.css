@@ -1,0 +1,131 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+	text-rendering : optimizeLegibility;
+	-webkit-font-smoothing : antialiased;
+}
+
+.green_color{
+    color: #00B72E;
+}
+
+#container{
+    position: relative;
+    margin: auto;
+    width: 1080px;
+    /* background: #dedede; */
+    padding: 5px;
+}
+.msg_wrapper{
+    position: relative;
+    width: 610px;
+    height: 50px;
+    margin: auto;
+    /* border: 2px solid black; */
+    /* border-radius: 6px; */
+    margin-top: 2px;
+    margin-bottom: 2px;
+    text-align: left;
+}
+.msg_title{
+    position: relative;
+    float: left;
+    border-radius: 6px 0 0 6px;
+    width: 120px;
+    height: 100%;
+    background: #eee;
+    text-align: center;
+    /* border-right: 1px solid white; */
+}
+.msg_title>.username{
+    position: relative;
+    display: block;
+    height: 38px;
+    line-height: 38px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600;
+}
+.msg_title>.datetime{
+    position: relative;
+    display: block;
+    height: 12px;
+    width: 100%;
+    font-size: 10px;
+    font-weight: 200;
+}
+.msg_content{
+    position: relative;
+    float: left;
+    border-radius: 0 6px 6px 0;
+    width: 480px;
+    height: 100%;
+    background: #efefef;
+}
+#type{
+    position: fixed;
+    display: none;
+    bottom: 20px;
+    width: 950px;
+    height: 60px;
+    border-radius: 6px;
+    background: #ccc;
+    left: 50%;
+    transform: translateX(-50%);
+    /* transition: all .5s ease; */
+}
+#type>input{
+    position: relative;
+    float: left;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    margin: 10px 4px 10px 10px;
+    width: 810px;
+    height: 40px;
+    font-size: 22px;
+    padding-left: 5px;
+}
+#type>.btn{
+    position: relative;
+    float: left;
+    height: 40px;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    margin-top: 10px;
+    font-weight: 800;
+    font-size: 20px;
+    cursor: pointer;
+}
+#type>.say{
+    width: 60px;
+    background: #00B72E;
+    opacity: 0.7;
+}
+#type>.close{
+    width: 40px;
+    background: #C00;
+    opacity: 0.5;
+    margin-left: 8px;
+    color: white;
+}
+.open_speaker{
+    background: orange;
+    opacity: 0.6;
+    position: fixed;
+    height: 60px;
+    width: 20px;
+    bottom: 20px;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    outline: none;
+    font-weight: 800;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+.open_speaker:hover{
+    width: 60px;
+}

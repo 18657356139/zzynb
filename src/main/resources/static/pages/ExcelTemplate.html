@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="lib/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="lib/excelTemplate.js"></script>
+    <style>
+        #template{
+            width: 900px;
+            height: 30px;
+            font-size: 20px;
+        }
+        #result{
+            width: 1080px;
+        }
+    </style>
+    <title>ExcelTemplate</title>
+</head>
+<body>
+    <div>
+        <p>Excel Template Generator</p>
+        <p>使用模板字符串，并上传Excel，将批量提取Excel中指定数据，并注入到字符串中。</p>
+        <p>NOTE</p>
+        <p>1. 模板字符串中使用#{n}指定提取Excel的第几列数据，n=0为第一列。</p>
+        <p>2. 指定使用Excel表格的第几个sheet, 0为第一个</p>
+        <p>3. 设置提取第x行到第y行的数据，x=0则从第一行开始提取，y=0则提取从x开始的所有数据</p>
+        <p>4. Excel仅限xls后缀格式。</p>
+    </div>
+
+    <p><input id="excel" type="file" accept=".xls"></p>
+    <p><label for="">template</label><input id="template" type="text"></p>
+    <p><label for="">sheet number</label><input id="sheetNum" type="number" value="0"></p>
+    <p><label for="">start row</label><input id="startRow" type="number" value="0"></p>
+    <p><label for="">end row</label><input id="endRow" type="number" value="0"></p>
+    <p><button id="upload">upload</button></p>
+    <pre id="result">Result:</pre>
+</body>
+</html>

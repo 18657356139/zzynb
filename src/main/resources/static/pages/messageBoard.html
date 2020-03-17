@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="lib/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="lib/vue.js"></script>
+    <script type="text/javascript" src="lib/msg.js"></script>
+    <link rel="stylesheet" href="lib/msg.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,700" rel="stylesheet">
+    <title>Message Board</title>
+</head>
+
+<body>
+    <div id="container">
+        <msg-li v-for="msg in props" :msg="msg" :current_user="currentUser"></msg-li>
+    </div>
+    <div id="type">
+        <input type="text" placeholder="I can I BB">
+        <button onclick="say()" class="btn say">SAY!</button>
+        <button onclick="closeSpeaker()" class="btn close">X</button>
+    </div>
+    <button onclick="openSpeaker()" class="open_speaker">></button>
+    <transition></transition>
+
+    
+</body>
+
+</html>
